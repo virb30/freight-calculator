@@ -4,7 +4,7 @@ import (
 	"errors"
 	"math"
 
-	"github.com/virb30/freight-calculator/internal/distance"
+	"github.com/virb30/freight-calculator/internal/domain/distance"
 )
 
 const (

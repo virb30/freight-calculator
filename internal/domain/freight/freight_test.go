@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/virb30/freight-calculator/internal/distance"
+	"github.com/virb30/freight-calculator/internal/domain/distance"
 )
 
 func TestCalculteFreight_ConstantDistance(t *testing.T) {
