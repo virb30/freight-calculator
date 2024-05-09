@@ -3,7 +3,8 @@ package configs
 import "github.com/spf13/viper"
 
 type conf struct {
-	WebServerPort string `mapstructure:"WEB_SERVER_PORT"`
+	WebServerPort  string `mapstructure:"WEB_SERVER_PORT"`
+	GrpcServerPort string `mapstructure:"GRPC_SERVER_PORT"`
 }
 
 func LoadConfig(path string) (*conf, error) {

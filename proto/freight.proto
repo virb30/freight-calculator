@@ -1,0 +1,29 @@
+syntax="proto3";
+package pb;
+option go_package = "internal/pb";
+
+
+message Coord {
+    double lat = 1;
+    double long = 2;
+}
+
+message Item {
+    double volume = 1;
+    double density = 2;
+    int32 quantity = 3;
+}
+
+message CalculateFreightRequest {
+    repeated Item items = 1;
+    Coord from = 2;
+    Coord to = 3;
+}
+
+message CalculateFreightResponse {
+    double total = 1;
+}
+
+service FreightService {
+    rpc CalculateFreight(CalculateFreightRequest) returns (CalculateFreightResponse) {}
+}

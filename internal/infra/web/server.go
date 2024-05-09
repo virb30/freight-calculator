@@ -26,10 +26,10 @@ func (s *WebServer) AddHandler(path string, handler http.HandlerFunc) {
 	s.Handlers[path] = handler
 }
 
-func (s *WebServer) Start() {
+func (s *WebServer) Start(ch chan error) {
 	s.Router.Use(middleware.Logger)
 	for path, handler := range s.Handlers {
 		s.Router.Handle(path, handler)
 	}
-	http.ListenAndServe(fmt.Sprintf(":%s", s.WebServerPort), s.Router)
+	ch <- http.ListenAndServe(fmt.Sprintf(":%s", s.WebServerPort), s.Router)
 }
